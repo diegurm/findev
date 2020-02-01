@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import './Sidebar.css';
+import './Main.css';
 
 function App() {
   return (
@@ -36,7 +37,82 @@ function App() {
           <button type="submit">Salvar</button>
         </form>
       </aside>
-      <main></main>
+      <main>
+        <ul>
+          <li className="dev-item">
+            <header>
+              <img
+                src="https://avatars1.githubusercontent.com/u/1062248?s=460&v=4"
+                alt="Diego Rodrigues"
+              />
+
+              <div className="user-info">
+                <strong>Diego Rodrigues</strong>
+                <span>Reactjs, React Native, Node.js</span>
+              </div>
+            </header>
+            <p>
+              Front-end Developer nas skills: Angular+, React, React native e
+              node.js
+            </p>
+            <a href="https://github.com/diegurm">Acessar perfil no github</a>
+          </li>
+          <li className="dev-item">
+            <header>
+              <img
+                src="https://avatars1.githubusercontent.com/u/1062248?s=460&v=4"
+                alt="Diego Rodrigues"
+              />
+
+              <div className="user-info">
+                <strong>Diego Rodrigues</strong>
+                <span>Reactjs, React Native, Node.js</span>
+              </div>
+            </header>
+            <p>
+              Front-end Developer nas skills: Angular+, React, React native e
+              node.js
+            </p>
+            <a href="https://github.com/diegurm">Acessar perfil no github</a>
+          </li>
+          <li className="dev-item">
+            <header>
+              <img
+                src="https://avatars1.githubusercontent.com/u/1062248?s=460&v=4"
+                alt="Diego Rodrigues"
+              />
+
+              <div className="user-info">
+                <strong>Diego Rodrigues</strong>
+                <span>Reactjs, React Native, Node.js</span>
+              </div>
+            </header>
+            <p>
+              Front-end Developer nas skills: Angular+, React, React native e
+              node.js
+            </p>
+            <a href="https://github.com/diegurm">Acessar perfil no github</a>
+          </li>
+          <li className="dev-item">
+            <header>
+              <img
+                src="https://avatars1.githubusercontent.com/u/1062248?s=460&v=4"
+                alt="Diego Rodrigues"
+              />
+
+              <div className="user-info">
+                <strong>Diego Rodrigues</strong>
+                <span>Reactjs, React Native, Node.js</span>
+              </div>
+            </header>
+            <p>
+              Front-end Developer nas skills: Angular+, React, React native e
+              node.js
+            </p>
+            <a href="https://github.com/diegurm">Acessar perfil no github</a>
+          </li>
+        </ul>
+      </main>
     </div>
   );
 }
