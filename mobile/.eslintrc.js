@@ -1,4 +1,18 @@
 module.exports = {
   root: true,
-  extends: '@react-native-community',
+  env: {
+    es6: true,
+    node: true,
+  },
+  extends: ['@react-native-community', 'prettier'],
+  plugins: ['prettier'],
+  globals: {
+    Atomics: 'readonly',
+    SharedArrayBuffer: 'readonly',
+  },
+  parserOptions: {
+    ecmaVersion: 2018,
+    sourceType: 'module',
+  },
+  rules: {},
 };
