@@ -11,12 +11,26 @@ const Stack = createStackNavigator();
 function Routes() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Main" component={Main} options={{title: 'Main'}} />
+      <Stack.Navigator
+        screenOptions={{
+          headerStyle: {
+            backgroundColor: '#7d40e7',
+          },
+          headerTitleAlign: 'center',
+          headerTintColor: '#fff',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+        }}>
+        <Stack.Screen
+          name="Main"
+          component={Main}
+          options={{title: 'DevRadar'}}
+        />
         <Stack.Screen
           name="Profile"
           component={Profile}
-          options={{title: 'Profile'}}
+          options={{title: 'Perfil no github'}}
         />
       </Stack.Navigator>
     </NavigationContainer>
