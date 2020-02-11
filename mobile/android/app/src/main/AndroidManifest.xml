@@ -2,6 +2,10 @@
   package="com.mobile">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <permission android:name="android.permission.ACCESS_COARSE_LOCATION" android:protectionLevel="signature" />
+    <permission android:name="android.permission.ACCESS_FINE_LOCATION" android:protectionLevel="signature"/>
 
     <application
       android:name=".MainApplication"
@@ -10,6 +14,9 @@
       android:roundIcon="@mipmap/ic_launcher_round"
       android:allowBackup="false"
       android:theme="@style/AppTheme">
+      <meta-data
+        android:name="com.google.android.geo.API_KEY"
+        android:value="AIzaSyDoTDmbjW9u5Xh-Ma9McPEUYb4OqlYA0Nk"/>
       <activity
         android:name=".MainActivity"
         android:label="@string/app_name"
