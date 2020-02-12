@@ -1,7 +1,16 @@
 import React, { useEffect, useState } from 'react';
-import { View, StyleSheet, Alert, Image, Text } from 'react-native';
+import {
+  View,
+  StyleSheet,
+  Alert,
+  Image,
+  Text,
+  TextInput,
+  TouchableOpacity,
+} from 'react-native';
 import Geolocation from '@react-native-community/geolocation';
 import MapView, { Marker, Callout } from 'react-native-maps';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
 export default function Main({ navigation }) {
   const [currentRegion, setcurrentRegion] = useState(null);
@@ -57,6 +66,18 @@ export default function Main({ navigation }) {
           </Callout>
         </Marker>
       </MapView>
+      <View style={styles.searchForm}>
+        <TextInput
+          style={styles.searchInput}
+          placeholder="Busca devs por techs.."
+          placeholderTextColor="#999"
+          autoCapitalize="words"
+          autoCorrect={false}
+        />
+        <TouchableOpacity style={styles.loadButton} onPress={() => {}}>
+          <MaterialIcons name="my-location" size={20} color="#FFF" />
+        </TouchableOpacity>
+      </View>
     </View>
   );
 }
@@ -106,5 +127,34 @@ const styles = StyleSheet.create({
 
   devTechs: {
     marginTop: 5,
+  },
+  searchForm: {
+    position: 'absolute',
+    top: 20,
+    left: 20,
+    right: 20,
+    zIndex: 5,
+    flexDirection: 'row',
+  },
+
+  searchInput: {
+    flex: 1,
+    height: 50,
+    backgroundColor: '#FFF',
+    color: '#333',
+    borderRadius: 25,
+    paddingHorizontal: 20,
+    fontSize: 16,
+    elevation: 2,
+  },
+
+  loadButton: {
+    width: 50,
+    height: 50,
+    backgroundColor: '#8e4dff',
+    borderRadius: 25,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginLeft: 15,
   },
 });
