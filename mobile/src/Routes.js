@@ -1,40 +1,38 @@
-import * as React from 'react';
-
-import {NavigationContainer} from '@react-navigation/native';
-import {createStackNavigator} from '@react-navigation/stack';
+import { createAppContainer } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation-stack';
 
 import Main from './pages/Main';
 import Profile from './pages/Profile';
 
-const Stack = createStackNavigator();
-
-function Routes() {
-  return (
-    <NavigationContainer>
-      <Stack.Navigator
-        screenOptions={{
-          headerStyle: {
-            backgroundColor: '#7d40e7',
-          },
+const Routes = createAppContainer(
+  createStackNavigator(
+    {
+      Main: {
+        screen: Main,
+        navigationOptions: {
           headerTitleAlign: 'center',
-          headerTintColor: '#fff',
-          headerTitleStyle: {
-            fontWeight: 'bold',
-          },
-        }}>
-        <Stack.Screen
-          name="Main"
-          component={Main}
-          options={{title: 'DevRadar'}}
-        />
-        <Stack.Screen
-          name="Profile"
-          component={Profile}
-          options={{title: 'Perfil no github'}}
-        />
-      </Stack.Navigator>
-    </NavigationContainer>
-  );
-}
+          title: 'FindDev',
+        },
+      },
+      Profile: {
+        screen: Profile,
+        navigationOptions: {
+          headerTitleAlign: 'center',
+          title: 'Perfil do github',
+        },
+      },
+    },
+    {
+      defaultNavigationOptions: {
+        headerTintColor: '#FFF',
+        headerStyle: {
+          backgroundColor: '#7D40E7',
+        },
+        headerBackTitleVisible: false,
+      },
+    },
+  ),
+);
 
 export default Routes;
+

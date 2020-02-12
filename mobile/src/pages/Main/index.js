@@ -1,9 +1,9 @@
-import React, {useEffect, useState} from 'react';
-import {View, StyleSheet, Alert, Image, Text} from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { View, StyleSheet, Alert, Image, Text } from 'react-native';
 import Geolocation from '@react-native-community/geolocation';
-import MapView, {Marker, Callout} from 'react-native-maps';
+import MapView, { Marker, Callout } from 'react-native-maps';
 
-export default function Main() {
+export default function Main({ navigation }) {
   const [currentRegion, setcurrentRegion] = useState(null);
 
   useEffect(() => {
@@ -11,7 +11,7 @@ export default function Main() {
       Geolocation.getCurrentPosition(
         position => {
           const {
-            coords: {latitude, longitude},
+            coords: { latitude, longitude },
           } = position;
 
           setcurrentRegion({
@@ -38,16 +38,17 @@ export default function Main() {
   return (
     <View accessible={true} style={styles.container}>
       <MapView style={styles.map} initialRegion={currentRegion}>
-        <Marker coordinate={{latitude: -17.3702412, longitude: -40.2215351}}>
+        <Marker coordinate={{ latitude: -17.3702412, longitude: -40.2215351 }}>
           <Image
             style={styles.avatar}
             source={{
               uri: 'https://avatars1.githubusercontent.com/u/1062248?s=460&v=4',
             }}
           />
-          <Callout onPress={()=> {
-            //navegação
-          }}>
+          <Callout
+            onPress={() => {
+              navigation.navigate('Profile', { github_username: 'diegurm' });
+            }}>
             <View style={styles.callout}>
               <Text style={styles.devName}>Diego Rodrigues</Text>
               <Text style={styles.devBio}>Frontend developer</Text>
