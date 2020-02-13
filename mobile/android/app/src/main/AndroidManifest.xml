@@ -1,19 +1,14 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
   package="com.mobile">
 
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-    <permission android:name="android.permission.ACCESS_COARSE_LOCATION" android:protectionLevel="signature" />
-    <permission android:name="android.permission.ACCESS_FINE_LOCATION" android:protectionLevel="signature"/>
-
-    <application
+     <application
       android:name=".MainApplication"
       android:label="@string/app_name"
       android:icon="@mipmap/ic_launcher"
       android:roundIcon="@mipmap/ic_launcher_round"
       android:allowBackup="false"
-      android:theme="@style/AppTheme">
+      android:theme="@style/AppTheme"
+      android:usesCleartextTraffic="true">
       <meta-data
         android:name="com.google.android.geo.API_KEY"
         android:value="AIzaSyDoTDmbjW9u5Xh-Ma9McPEUYb4OqlYA0Nk"/>
@@ -29,5 +24,23 @@
       </activity>
       <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
     </application>
+
+      <!-- Permissions -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- Camera, Photos, input file -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- Geolocation API -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-feature android:name="android.hardware.location.gps" />
+    <!-- Network API -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- Navigator.getUserMedia -->
+    <!-- Video -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <!-- Audio -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
 
 </manifest>
